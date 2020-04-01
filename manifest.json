@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "tencentHelper",
+  "version": "1.0",
+  "description": "download your music.",
+  "icons": {
+    "16": "tencent.png"
+  },
+  "content_scripts":[
+    {
+      "matches": ["https://v.qq.com/x/*"],
+      "js": ["helper.js"],
+      "run_at":"document_start",
+      "all_frames": true
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "tencent.png"
+    },
+    "default_title": "腾讯视频助手",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+  	"tabs",
+    "activeTab",
+    "*://*/*",
+    "downloads",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "web_accessible_resources": [
+    "fake.js",
+    "tencent.js"
+  ]
+}
